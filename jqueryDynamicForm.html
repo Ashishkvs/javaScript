@@ -14,7 +14,7 @@
       <button id="addToEmail">Add ToEmail</button>
 <form id="toEmail">
     <div id="container" class="toEmailParty">
-        <input type="email" name="email"  id="email">
+        <input type="email" name="email[]"  id="email">
         <input type="text" name="partyName"  id="partyName">
     </div>
         
@@ -23,7 +23,7 @@
 </form>
 <script>
         var html = '';
-        var htmlField = ` <div class="toEmailParty">  <input type="email" name="email"  id="email">
+        var htmlField = ` <div class="toEmailParty">  <input type="email" name="email[]"  id="email">
                                 <input type="text" name="partyName"  id="partyName">
                                 <input type="button" class="remove" name="remove" value="remove"></div>`;
 
