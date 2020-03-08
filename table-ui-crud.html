@@ -48,7 +48,21 @@
 </script>
 <script>
     function tableDataAsJson(){
-
+        // var trow = document.getElementById("emailTable").getElementsByTagName('tr')[0];
+    //    var rows  = document.querySelectorAll("table tr");
+      var fDt = {};
+       let listToEmailParty = [];
+        $("#emailTable tr").each(function(){
+            fDt["email"] = $(this).find("td:eq(0)").text();
+            fDt["partyName"] = $(this).find("td:eq(1)").text();
+        //    console.log(fDt);
+            listToEmailParty.push(fDt);
+            fDt={};
+        })
+        console.log(listToEmailParty);
+        //remove first element from array
+        listToEmailParty.shift();
+       return listToEmailParty;
     }
     function prePopulateTable(){
         var arr = [
@@ -71,6 +85,9 @@
     }
     function onFormSubmit(){
         var formData= readFormData();
+        
+            // console.log(formData);
+        
         if(selectedRow == null){
             insertNewRecord(formData);
         }else{
@@ -140,6 +157,7 @@ function onDelete(td){
         document.getElementById('tableData').innerHTML=JSON.stringify(emailParty);
     }
 </script>
+<script></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
